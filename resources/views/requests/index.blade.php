@@ -9,7 +9,7 @@
 @endsection
 
 @section('content_header')
-    <h1>Listado de Actividades UEM Telco & Utilities.</h1>
+    <h1>Listado de Actividades UEN Telco & Utilities.</h1>
 @stop
 
 @section('content')
@@ -20,6 +20,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Descripción</th>
+                        <th>Usuario</th>
                         <th>Estado</th>
                         <th>Tiempo</th>
                         <th>Acciones</th>
@@ -30,6 +31,7 @@
                         <tr>
                             <td>{{$request->id_request}}</td>
                             <td>{{$request->description}}</td>
+                            <td>{{$request->id_user}}</td>
                             <td>{{$request->request_status}}</td>
                             <td>{{$request->time_work}}</td>
                             <td>
@@ -37,7 +39,6 @@
                                 <form action="{{route('requests.destroy',$request->id_request)}}" method="POST">
                                     @method('delete')
                                     @csrf
-                                    <a class="btn btn-warning btn-sm" href="{{route('requests.edit',$request->id_request)}}"><i class="fas fa-edit"></i></a>
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                 </form>
                                 

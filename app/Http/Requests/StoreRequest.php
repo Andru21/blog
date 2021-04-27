@@ -43,6 +43,8 @@ class StoreRequest extends FormRequest
             'id_project' => 'required',
             'id_subproject' => 'required',
             'id_app_module' => 'required',
+            'id_criticality' => 'required',
+            'id_request_class' => 'required',
             /* 'start_real_date' => 'required',
             'end_real_date' => 'required',
             'time_work' => 'required',
@@ -50,10 +52,9 @@ class StoreRequest extends FormRequest
             'id_father_request' => 'required',
             'id_foldercloud' => 'required',
             'start_time_distributed' => 'required',
-            'id_request_class' => 'required',
             'time_distributed' => 'required',
             'id_user_reg' => 'required',
-            'id_criticality' => 'required',
+            
             'initial_time_estimate' => 'required' */
         ];
     }
@@ -77,7 +78,10 @@ class StoreRequest extends FormRequest
         'request_status.required' => 'Este campo es obligatorio',
         'id_project.required' => 'Este campo es obligatorio',
         'id_subproject.required' => 'Este campo es obligatorio',
-        'id_app_module.required' => 'Este campo es obligatorio'
+        'id_app_module.required' => 'Este campo es obligatorio',
+        'id_criticality.required' => 'Este campo es obligatorio',
+        'id_request_class.required' => 'Este campo es obligatorio'
+
     ];
         
 

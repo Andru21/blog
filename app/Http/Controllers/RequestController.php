@@ -21,6 +21,7 @@ class RequestController extends Controller
 {
     public function index()
     {
+        $usuarios = Usuario::all();
         $requests = ModelsRequest::all();
         return view('requests.index',compact('requests'));
     }

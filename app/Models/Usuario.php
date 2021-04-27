@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Request as ModelRequest;
 
 class Usuario extends Model
 {
@@ -14,4 +15,8 @@ class Usuario extends Model
     protected $primaryKey = null;
     public $incrementing = false;
     protected $guarded = [];
+
+    public function resquest(){
+        return $this->hasMany(ModelRequest::class,'','id_request');
+    }
 }

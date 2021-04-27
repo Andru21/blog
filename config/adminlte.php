@@ -235,7 +235,7 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text' => 'Actividades',
+            'text' => 'Solicitudes',
 
             'icon'    => 'fas fa-chart-line',
             'submenu' => [
@@ -244,15 +244,33 @@ return [
                     'url'  => 'requests/',
                 ],
                 [
-                    'text' => 'Crear Actividad',
+                    'text' => 'Solicitudes Encoladas',
                     'url'  => 'requests/create',
+                ],
+                [
+                    'text' => 'Solicitudes Agendadas',
+                    'url'  => '#',
+                    'label' => 'Next',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Solicitudes Distribuidas',
+                    'url'  => '#',
+                    'label' => 'Next',
+                    'label_color' => 'danger',
+                ],
+                [
+                    'text' => 'Solicitudes Obligatorias',
+                    'url'  => '#',
+                    'label' => 'Next',
+                    'label_color' => 'danger',
                 ],
             ],
         ],
         [
             'text' => 'Tiempos',
             'icon'    => 'fas fa-stopwatch',
-            'label' => 'Proximamente',
+            'label' => 'Next',
             'label_color' => 'danger',
             'submenu' => [
                 [
