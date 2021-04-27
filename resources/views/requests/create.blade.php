@@ -97,7 +97,7 @@
                     </div>
                     <div class="col-3">{{-- time_estimate* --}}
                         <label for="time_estimate">Tiempo Estimado*</label>
-                        <input type="number" value="{{ old('time_estimate') }}" name="time_estimate" class="form-control"
+                        <input type="number" value="{{ old('time_estimate') }}" min="1" name="time_estimate" class="form-control"
                             placeholder="Tiempo en Horas...">
                         @error('time_estimate')
                             <small style="color:red">{{ $message }}</small>
