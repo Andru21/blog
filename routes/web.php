@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\RequestController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 
-Route::resource('requests',RequestController::class);
+
+Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
+
+
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+    Route::resource('requests', RequestController::class);
+    Route::get('/', function () {
+        return view('home');
+    })->name('home');
+    Route::get('login', [UserAuthController::class, 'login'])->name('login');
+});

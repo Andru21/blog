@@ -8,8 +8,20 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
+
+
 {
     use HasFactory, Notifiable;
+
+    protected $table = 'USER_';
+    public $timestamps = false;
+    protected $primaryKey = null;
+    public $incrementing = false;
+    protected $guarded = [];
+
+    public function resquest(){
+        return $this->hasMany(ModelRequest::class,'','id_request');
+    }
 
     /**
      * The attributes that are mass assignable.
