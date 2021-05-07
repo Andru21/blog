@@ -31,10 +31,10 @@ class UserAuthController extends Controller
                 //Si el password pasa redireccionamos al usuario
 
                 $request->session()->put('LoggedUser', $user->id_user);
-                return redirect()->route('home');
+                return redirect()->route('admin.dashboard');
             }else{
                 if (session()->has('LoggedUser') && ($request->path() != 'login')) {
-                    return redirect(route('home'));
+                    return redirect(route('admin.dashboard'));
                     
                 }
                 return back()->with('fail','Contraseña incorrecta');
@@ -43,5 +43,12 @@ class UserAuthController extends Controller
             return back()->with('fail','La cuenta especificada no se encuentra');
         }
 
+    }
+
+    function logout(){
+        if (session()->has('LoggedUser')) {
+            session()->pull('LoggedUser');
+            return redirect(route('login'));
+        }
     }
 }

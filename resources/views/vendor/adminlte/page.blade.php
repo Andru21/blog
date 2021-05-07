@@ -3,7 +3,7 @@
 @inject('layoutHelper', 'JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper')
 
 @if($layoutHelper->isLayoutTopnavEnabled())
-    @php( $def_container_class = 'container' )
+    @php( $def_container_class = 'container' )    
 @else
     @php( $def_container_class = 'container-fluid' )
 @endif
@@ -19,7 +19,6 @@
 
 @section('body')
     <div class="wrapper">
-
         {{-- Top Navbar --}}
         @if($layoutHelper->isLayoutTopnavEnabled())
             @include('adminlte::partials.navbar.navbar-layout-topnav')
@@ -60,7 +59,6 @@
         @if(config('adminlte.right_sidebar'))
             @include('adminlte::partials.sidebar.right-sidebar')
         @endif
-
     </div>
 @stop
 
