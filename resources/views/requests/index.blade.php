@@ -18,7 +18,7 @@
                         <th>Usuario</th>
                         <th>Estado</th>
                         <th>Tiempo</th>
-                        <th>Acciones</th>
+{{--                         <th>Acciones</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                             <td>{{$request->id_user}}</td>
                             <td>{{$request->request_status}}</td>
                             <td>{{$request->time_work}}</td>
-                            <td>
+{{--                             <td>
                                 
                                 <form action="{{route('requests.destroy',$request->id_request)}}" method="POST">
                                     @method('delete')
@@ -37,7 +37,7 @@
                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                 </form>
                                 
-                            </td>
+                            </td> --}}
                             
                         </tr>
                     @endforeach
