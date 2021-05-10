@@ -29,7 +29,7 @@ class RequestRangeController extends Controller
     {
         $max_id_request_range = Request_Range::select('id_request_range')->orderBy('id_request_range', 'desc')->first();
         $id_request_range = intval($max_id_request_range->id_request_range) + 1;
-        $solicitudes = ModelRequest::where('id_user', session('LoggedUser'))->get();
+        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999])->get();
         return view(
             'times.create',
             compact(
@@ -67,7 +67,7 @@ class RequestRangeController extends Controller
         $reporte->id_user = $request->id_user; 
         $reporte->initial_date = $fecha_inicial; 
         $reporte->end_date = $fecha_final; 
-        $reporte->work_time = $diferencia; 
+        $reporte->work_time = $diferencia;
         $reporte->is_close = $request->is_close; 
         $reporte->id_support_activity = $request->id_support_activity;   
         $reporte->in_site = $request->in_site;

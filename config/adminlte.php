@@ -50,7 +50,7 @@ return [
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Oprima Corp.',
+    'logo_img_alt' => 'Optima Corp.',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'usermenu_enabled' => true,
+    'usermenu_enabled' => false,
     'usermenu_header' => false,
     'usermenu_header_class' => 'bg-danger',
     'usermenu_image' => false,
@@ -224,7 +224,7 @@ return [
     */
 
     'menu' => [
-/*         [
+        /*         [
             'text' => 'search',
             'search' => true,
             'topnav' => true,
@@ -245,12 +245,15 @@ return [
             'icon'    => 'fas fa-chart-line',
             'submenu' => [
                 [
-                    'text' => 'Listado',
+                    'text' => 'Ver Solicitudes',
                     'url'  => 'requests/',
+                    'icon'    => 'fas fa-list',
+
                 ],
                 [
                     'text' => 'Solicitudes Encoladas',
                     'url'  => 'requests/create',
+                    'icon' => 'fas fa-clipboard-list'
                 ],
                 [
                     'text' => 'Solicitudes Agendadas',
@@ -279,10 +282,12 @@ return [
                 [
                     'text' => 'Ver Tiempos',
                     'route'  => 'times.index',
+                    'icon'    => 'fas fa-list',
                 ],
                 [
                     'text' => 'Reportar Tiempos',
                     'route'  => 'times.create',
+                    'icon' => 'fas fa-clipboard-list'
                 ],
             ],
         ],
