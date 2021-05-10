@@ -22,7 +22,7 @@ class RequestController extends Controller
     public function index()
     {
         $usuarios = Usuario::all();
-        $requests = ModelsRequest::where('id_user',session('LoggedUser'))->get();
+        $requests = ModelsRequest::whereIn('id_user',[session('LoggedUser')])->get();
         return view('requests.index',compact('requests'));
     }
 

@@ -29,7 +29,7 @@ class RequestRangeController extends Controller
     {
         $max_id_request_range = Request_Range::select('id_request_range')->orderBy('id_request_range', 'desc')->first();
         $id_request_range = intval($max_id_request_range->id_request_range) + 1;
-        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999])->get();
+        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999])->orderBy('id_request')->get();
         return view(
             'times.create',
             compact(
@@ -47,6 +47,9 @@ class RequestRangeController extends Controller
      */
     public function store(StoreRequestRange $request)
     {
+        $max_id_request_range = Request_Range::select('id_request_range')->orderBy('id_request_range', 'desc')->first();
+        $id_request_range = intval($max_id_request_range->id_request_range) + 1;
+
         $fecha_inicial = date("Y-m-d H:i:s", strtotime(str_replace('T', ' ', $request->initial_date)));
         $fecha_final = date("Y-m-d H:i:s", strtotime(str_replace('T', ' ', $request->end_date)));
 
@@ -62,7 +65,7 @@ class RequestRangeController extends Controller
         $diferencia = abs($total_final - $total_inicial);
 
         $reporte = new Request_Range();
-        $reporte->id_request_range = $request->id_request_range; 
+        $reporte->id_request_range = $id_request_range; 
         $reporte->id_request = $request->id_request; 
         $reporte->id_user = $request->id_user; 
         $reporte->initial_date = $fecha_inicial; 

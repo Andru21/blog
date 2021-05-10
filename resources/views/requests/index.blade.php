@@ -15,7 +15,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Descripción</th>
-                        <th>Usuario</th>
+                        {{-- <th>Usuario</th> --}}
                         <th>Estado</th>
                         <th>Tiempo</th>
 {{--                         <th>Acciones</th> --}}
@@ -26,7 +26,7 @@
                         <tr>
                             <td>{{$request->id_request}}</td>
                             <td>{{$request->description}}</td>
-                            <td>{{$request->id_user}}</td>
+                            {{-- <td>{{$request->id_user}}</td> --}}
                             <td>{{$request->request_status}}</td>
                             <td>{{$request->time_work}}</td>
 {{--                             <td>
