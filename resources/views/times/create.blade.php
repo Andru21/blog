@@ -18,8 +18,8 @@
         <div class="card-body">
             <form action="{{ route('times.store') }}" method="POST">
                 @csrf
-                <div class="row mb-2">{{-- FILA 1 --}}
-                    <div class="col-1">{{-- ID_REQUEST_RANGE --}}
+                <div class="row mb-2 justify-content-center">{{-- FILA 1 --}}
+                    <div class="col-3">{{-- ID_REQUEST_RANGE --}}
                         <label for="id_request_range">Identificador</label>
                         <input type="number" value="{{ old('id_request_range', $id_request_range) }}"
                             name="id_request_range" class="form-control" readonly>
@@ -28,8 +28,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">{{-- FILA 2 --}}
-                    <div class="col-6">{{-- ID_REQUEST --}}
+                <div class="row mb-2 justify-content-center">{{-- FILA 2 --}}
+                    <div class="col-8">{{-- ID_REQUEST --}}
                         <label for="id_request">Solicitud</label>
                         <select name="id_request" class="form-control">
                             <option selected disabled>Seleccione...</option>
@@ -43,15 +43,15 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">{{-- FILA 3 --}}
-                    <div class="col-2">{{-- INITIAL DATE --}}
+                <div class="row mb-2 justify-content-center">{{-- FILA 3 --}}
+                    <div class="col-4">{{-- INITIAL DATE --}}
                         <label for="initial_date">Fecha y Hora Inicial</label>
                         <input type="datetime-local" class="form-control" name="initial_date">
                         @error('initial_date')
                             <small style="color:red">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="col-2">{{-- END DATE --}}
+                    <div class="col-4">{{-- END DATE --}}
                         <label for="end_date">Fecha y Hora Final</label>
                         <input type="datetime-local" class="form-control" name="end_date">
                         @error('end_date')
@@ -66,8 +66,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">{{-- FILA 4 --}}
-                    <div class="col-2"> {{-- IS CLOSE --}}
+                <div class="row mb-2 justify-content-center">{{-- FILA 4 --}}
+                    <div class="col-4"> {{-- IS CLOSE --}}
                         <label for="is_close">Reporte de Cierre</label>
                         <select name="is_close" class="form-control">
                             <option selected value="N">No</option>
@@ -77,7 +77,7 @@
                             <small style="color:red">{{ $message }}</small>
                         @enderror
                     </div>
-                    <div class="col-2">{{-- IN SITE --}}
+                    <div class="col-4">{{-- IN SITE --}}
                         <label for="in_site">Trabajo en Sitio</label>
                         <select name="in_site" class="form-control">
                             <option value="Y" selected>Si</option>
@@ -88,8 +88,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2">{{-- FILA 5 --}}
-                    <div class="col-6">{{-- ID_SUPPORT_ACTIVITY --}}
+                <div class="row mb-2 justify-content-center">{{-- FILA 5 --}}
+                    <div class="col-8">{{-- ID_SUPPORT_ACTIVITY --}}
                         <label for="id_support_activity">Solicitud de Soporte</label>
                         <select name="id_support_activity" class="form-control">
                             <option value="" selected>Ninguna</option>
