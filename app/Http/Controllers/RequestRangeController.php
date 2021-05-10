@@ -29,7 +29,7 @@ class RequestRangeController extends Controller
     {
         $max_id_request_range = Request_Range::select('id_request_range')->orderBy('id_request_range', 'desc')->first();
         $id_request_range = intval($max_id_request_range->id_request_range) + 1;
-        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999])->orderBy('id_request')->get();
+        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999,99998])->orderBy('id_request')->get();
         return view(
             'times.create',
             compact(

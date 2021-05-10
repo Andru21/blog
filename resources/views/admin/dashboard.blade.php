@@ -14,7 +14,7 @@
     </div>
 </div>
 <div class="row justify-content-center">
-    <div class="col-5">
+    <div class="col-6">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -24,7 +24,7 @@
                 <img class="d-block w-100" src="{{asset('img/2.png')}}" alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('img/3.jpg')}}" alt="Third slide">
+                <img class="d-block w-100" src="{{asset('img/3.png')}}" alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
