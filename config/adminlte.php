@@ -224,11 +224,11 @@ return [
     */
 
     'menu' => [
-        [
+/*         [
             'text' => 'search',
             'search' => true,
             'topnav' => true,
-        ],
+        ], */
         [
             'text' => 'Cerrar Sesión',
             'route' => 'logout',
@@ -275,16 +275,14 @@ return [
         [
             'text' => 'Tiempos',
             'icon'    => 'fas fa-stopwatch',
-            'label' => 'Next',
-            'label_color' => 'danger',
             'submenu' => [
                 [
-                    'text' => 'Reportar Tiempos',
-                    'url'  => '#',
+                    'text' => 'Ver Tiempos',
+                    'route'  => 'times.index',
                 ],
                 [
-                    'text' => 'Ver Tiempos',
-                    'url'  => '#',
+                    'text' => 'Reportar Tiempos',
+                    'route'  => 'times.create',
                 ],
             ],
         ],

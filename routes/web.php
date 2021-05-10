@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\RequestController;
+use App\Http\Controllers\RequestRangeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
 
@@ -24,6 +25,7 @@ Route::post('check', [UserAuthController::class, 'check'])->name('auth.check');
 
 Route::group(['middleware' => ['AuthCheck']], function () {
     Route::resource('requests', RequestController::class);
+    Route::resource('times', RequestRangeController::class);
     /*Route::get('/', function () {
         return view('home');
     })->name('home'); */
