@@ -8,7 +8,7 @@
 @section('content')
     @if (Session::has('message'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <strong>Reporte Procesado!</strong> Puedes continuar reportando tus actividades
+            <strong>Reporte Procesado!</strong> Reporte #{{session('message')}}, Puedes continuar reportando tus actividades
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -18,7 +18,7 @@
         <div class="card-body">
             <form action="{{ route('times.store') }}" method="POST">
                 @csrf
-                <div class="row mb-2 justify-content-center">{{-- FILA 1 --}}
+                <div class="row mb-2 justify-content-center" hidden>{{-- FILA 1 --}}
                     <div class="col-3">{{-- ID_REQUEST_RANGE --}}
                         <label for="id_request_range">Identificador</label>
                         <input type="number" value="{{ old('id_request_range', $id_request_range) }}"
@@ -66,8 +66,8 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2 justify-content-center">{{-- FILA 4 --}}
-                    <div class="col-4"> {{-- IS CLOSE --}}
+                <div class="row mb-2 justify-content-center" >{{-- FILA 4 --}}
+                    <div class="col-4" hidden> {{-- IS CLOSE --}}
                         <label for="is_close">Reporte de Cierre</label>
                         <select name="is_close" class="form-control">
                             <option selected value="N">No</option>
@@ -88,7 +88,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="row mb-2 justify-content-center">{{-- FILA 5 --}}
+                <div class="row mb-2 justify-content-center" hidden>{{-- FILA 5 --}}
                     <div class="col-8">{{-- ID_SUPPORT_ACTIVITY --}}
                         <label for="id_support_activity">Solicitud de Soporte</label>
                         <select name="id_support_activity" class="form-control">
@@ -115,7 +115,7 @@
                 <div class="row mb-2">{{-- FILA BOTONES --}}
                     <div class="col text-center">
                         <button type="submit" value="submit" class="btn btn-primary">Guardar</button>
-                        <button type="reset" class="btn btn-secondary">Resetear</button>
+                        <button type="reset" class="btn btn-secondary">Reiniciar</button>
                     </div>
                 </div>
             </form>

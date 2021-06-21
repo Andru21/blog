@@ -29,7 +29,7 @@ class RequestRangeController extends Controller
     {
         $max_id_request_range = Request_Range::select('id_request_range')->orderBy('id_request_range', 'desc')->first();
         $id_request_range = intval($max_id_request_range->id_request_range) + 1;
-        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999,99998])->orderBy('id_request')->get();
+        $solicitudes = ModelRequest::whereIn('id_user', [session('LoggedUser'),99999,99998])->orderBy('id_request')->where('request_status','<>',5)->get();
         return view(
             'times.create',
             compact(
@@ -53,7 +53,7 @@ class RequestRangeController extends Controller
         $fecha_inicial = date("Y-m-d H:i:s", strtotime(str_replace('T', ' ', $request->initial_date)));
         $fecha_final = date("Y-m-d H:i:s", strtotime(str_replace('T', ' ', $request->end_date)));
 
-        $hora_final = date("H", strtotime(str_replace('T', ' ', $request->end_date)));
+        /*  $hora_final = date("H", strtotime(str_replace('T', ' ', $request->end_date)));
         $hora_inicial = date("H", strtotime(str_replace('T', ' ', $request->initial_date)));
 
         $minuto_final = (date("i", strtotime(str_replace('T', ' ', $request->end_date))))/60;
@@ -62,7 +62,11 @@ class RequestRangeController extends Controller
         $total_final = $hora_final+$minuto_final;
         $total_inicial = $hora_inicial+$minuto_inicial;
 
-        $diferencia = abs($total_final - $total_inicial);
+        $diferencia = abs($total_final - $total_inicial); */
+
+        $diferencia = 0;
+        $cierre = 'Y';
+        $soporte = null;
 
         $reporte = new Request_Range();
         $reporte->id_request_range = $id_request_range; 
@@ -71,12 +75,12 @@ class RequestRangeController extends Controller
         $reporte->initial_date = $fecha_inicial; 
         $reporte->end_date = $fecha_final; 
         $reporte->work_time = $diferencia;
-        $reporte->is_close = $request->is_close; 
-        $reporte->id_support_activity = $request->id_support_activity;   
+        $reporte->is_close = $cierre; 
+        $reporte->id_support_activity = $soporte;   
         $reporte->in_site = $request->in_site;
 
         $reporte->save();
-        return redirect()->route('times.create')->with('message','hello');
+        return redirect()->route('times.create')->with('message',$id_request_range);
     }
 
     /**
@@ -121,6 +125,7 @@ class RequestRangeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Request_Range::where('id_request_range', $id)->delete();
+        return redirect()->route('times.index')->with('message','hello');
     }
 }

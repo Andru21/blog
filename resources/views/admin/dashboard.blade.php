@@ -14,18 +14,25 @@
     </div>
 </div>
 <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-5">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="{{asset('img/1.png')}}" alt="First slide">
+                <img class="d-block w-100" src="{{asset('img/C.jpg')}}" alt="Third slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('img/2.png')}}" alt="Second slide">
+                <img class="d-block w-100" src="{{asset('img/D.jpg')}}" alt="Third slide">
+              </div>             
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{asset('img/E.jpg')}}" alt="Third slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="{{asset('img/3.png')}}" alt="Third slide">
+                <img class="d-block w-100" src="{{asset('img/A.jpg')}}" alt="First slide">
               </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{asset('img/B.jpg')}}" alt="Third slide">
+              </div>
+              
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>

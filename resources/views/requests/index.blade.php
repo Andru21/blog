@@ -8,6 +8,14 @@
     <h1>Listado de Solicitudes UEN Telco & Utilities.</h1>
 @stop
 @section('content')
+@if (Session::has('message'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Solicitud Creada!</strong> La solicitud {{ session('message') }} ha sido creada satisfactoriamente 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 <div class="card">
     <div class="card-body">
             <table class="table table-striped" id="example">
@@ -17,7 +25,8 @@
                         <th>Descripción</th>
                         {{-- <th>Usuario</th> --}}
                         <th>Estado</th>
-                        <th>Tiempo</th>
+                        <th>Tiempo Estimado</th>
+                        <th>Tiempo Trabajado</th>
 {{--                         <th>Acciones</th> --}}
                     </tr>
                 </thead>
@@ -28,6 +37,7 @@
                             <td>{{$request->description}}</td>
                             {{-- <td>{{$request->id_user}}</td> --}}
                             <td>{{$request->request_status}}</td>
+                            <td>{{$request->time_estimate}}</td>
                             <td>{{$request->time_work}}</td>
 {{--                             <td>
                                 

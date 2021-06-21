@@ -1,7 +1,8 @@
 <?php
 
-return [
+use Illuminate\Support\Facades\Session;
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Title
@@ -235,6 +236,11 @@ return [
             'topnav_right' => true,
         ],
         [
+            'text' => '',
+            'url' => '#',
+            'topnav_right' => true,
+        ],
+        [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -248,12 +254,11 @@ return [
                     'text' => 'Ver Solicitudes',
                     'url'  => 'requests/',
                     'icon'    => 'fas fa-list',
-
                 ],
                 [
                     'text' => 'Solicitudes Encoladas',
                     'url'  => 'requests/create',
-                    'icon' => 'fas fa-clipboard-list'
+                    'icon' => 'fas fa-clipboard-list',
                 ],
                 [
                     'text' => 'Solicitudes Agendadas',
@@ -289,9 +294,16 @@ return [
                     'route'  => 'times.create',
                     'icon' => 'fas fa-clipboard-list'
                 ],
+                
             ],
         ],
-
+        [
+            'text' => 'Buzon de Sugerencias',
+            'icon' => 'fas fa-mail-bulk',
+            'url' => '#',
+            'label' => 'Next',
+            'label_color' => 'danger',
+        ],
     ],
 
     /*

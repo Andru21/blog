@@ -29,7 +29,7 @@ class StoreRequest extends FormRequest
             'id_external_request_type' => 'required',
             'id_external_request' => 'required',
             'reprocess' => 'required',
-            'id_reprocess_causal' => 'required',
+            /* 'id_reprocess_causal' => 'required', */
             'description' => 'required',
             'priority' => 'required',
             'id_request_type' => 'required',
@@ -65,7 +65,7 @@ class StoreRequest extends FormRequest
         'id_external_request_type.required' => 'Este campo es obligatorio',
         'id_external_request.required' => 'Este campo es obligatorio',
         'reprocess.required' => 'Este campo es obligatorio',
-        'id_reprocess_causal.required' => 'Este campo es obligatorio',
+        /* 'id_reprocess_causal.required' => 'Este campo es obligatorio', */
         'description.required' => 'Este campo es obligatorio',
         'priority.required' => 'Este campo es obligatorio',
         'id_request_type.required' => 'Este campo es obligatorio',

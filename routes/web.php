@@ -5,6 +5,8 @@ use App\Http\Controllers\RequestController;
 use App\Http\Controllers\RequestRangeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,4 +34,5 @@ Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('login', [UserAuthController::class, 'login'])->name('login');
     Route::get('logout', [UserAuthController::class, 'logout'])->name('logout');
     Route::get('/', [MainController::class,'dashboard'])->name('admin.dashboard');
+    Route::post('requests/subproyectos', [App\Http\Controllers\RequestController::class, 'subproyectos']);
 });
